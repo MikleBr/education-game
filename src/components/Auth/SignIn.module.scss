@@ -1,0 +1,78 @@
+@import "../../assets/styles/vars.scss";
+
+.containerLink {
+  width: 100%;
+  padding-top: 69px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  display: inline-block;
+  padding: 0 144px 0 0;
+  font-weight: 300;
+  font-size: 54px;
+  line-height: 65px;
+  color: $dark-brown;
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: $orange;
+  transition: 0.3s;
+}
+
+.containerForm {
+  position: absolute;
+  top: 150px;
+  max-width: 642px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgMonsterHead {
+  width: 90%;
+}
+
+.formSign {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputForm {
+  background: $orange;
+  max-width: 418px;
+  border-radius: 16px;
+  font-size: 42px;
+  color: $white;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 51px;
+  margin-bottom: 16px;
+  text-align: center;
+  padding: 18px 0;
+}
+
+.inputForm::placeholder {
+  font-size: 42px;
+  color: $white;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 51px;
+}
+
+.submitForm {
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 54px;
+  line-height: 65px;
+  color: $dark-brown;
+  transition-property: width;
+  transition: 0.3s;
+}
+
+.submitForm:hover {
+  text-decoration: underline $orange;
+  transition: 0, 3s;
+}

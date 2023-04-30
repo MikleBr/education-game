@@ -1,0 +1,90 @@
+@import "../../assets/styles/vars.scss";
+
+.TaskWrapper {
+    margin-top: 28px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.containerUser {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    // .userName {
+    //     color: $dark-brown;
+    //     font-weight: 600;
+    //     font-size: $fz;
+    //     line-height: 65px;
+    // }
+
+    .containerPoint {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .imgPoint {
+            width: 56px;
+            height: 56px;
+        }
+
+        .numberPoint {
+            padding-left: 8px;
+            font-weight: 300;
+            font-size: $fz;
+            line-height: 65px;
+        }
+    }
+}
+
+.containerTask {
+    position: relative;
+    top: -90px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 888px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .containerTextTask {
+        width: 100%;
+        background-color: $accent;
+        border-radius: 50px;
+        padding: 61px;
+        text-align: center;
+
+        .textTask {
+            font-size: $fz;
+            color: $white;
+            word-wrap: break-word;
+        }
+    }
+
+    .containerAnswer {
+        width: 100%;
+        margin: 51px auto 64px auto;
+        max-width: 888px;
+        border: 6px solid $accent;
+        border-radius: 14px;
+        padding: 61px;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 48px;
+        color: $dark-brown;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    .submitTask {
+        line-height: 65px;
+        font-size: $fz;
+        color: $dark-brown;
+
+    }
+}
