@@ -1,4 +1,5 @@
 import "./App.scss";
+import Main from "./pages/Main";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Task from "./pages/Task";
@@ -17,7 +18,8 @@ function App() {
       <div className="App">
         {/* <SignIn /> */}
         {/* <SignUp /> */}
-        {<Task />}
+        {/* {<Task />} */}
+        <Main />
       </div>
     </>
   );
