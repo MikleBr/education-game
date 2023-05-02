@@ -1,8 +1,8 @@
 import monsterHead from "../../assets/image/monsterHead.svg";
 import star from "../../assets/image/star.svg";
-import styles from "./SignIn.module.scss";
+import styles from "./SignInForm.module.scss";
 import { useState } from "react";
-function SignIn({ login, password }) {
+function SignInForm({ onSubmit }) {
   const [data, setData] = useState({
     login: "",
     password: "",
@@ -10,6 +10,7 @@ function SignIn({ login, password }) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    onSubmit(data);
   };
 
   const changeValueInput = (event, name) => {
@@ -20,7 +21,7 @@ function SignIn({ login, password }) {
     login: data.login,
     password: data.password,
   };
-  console.log(handleCreate);
+
   return (
     <>
       <div className={styles.containerLink}>
@@ -33,7 +34,7 @@ function SignIn({ login, password }) {
         <img src={monsterHead} className={styles.imgMonsterHead} />
         <form onSubmit={handleFormSubmit} className={styles.formSign}>
           <input
-            placeholder={login}
+            placeholder="Введите логин"
             type="text"
             className={styles.inputForm}
             value={data.login}
@@ -42,7 +43,7 @@ function SignIn({ login, password }) {
           ></input>
           <input
             type="password"
-            placeholder={password}
+            placeholder="Введите пароль"
             className={styles.inputForm}
             value={data.password}
             onChange={(event) => changeValueInput(event, "password")}
@@ -57,4 +58,4 @@ function SignIn({ login, password }) {
   );
 }
 
-export default SignIn;
+export default SignInForm;

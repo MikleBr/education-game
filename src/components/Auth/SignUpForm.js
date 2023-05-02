@@ -1,8 +1,8 @@
 import monsterHead from "../../assets/image/monsterHead.svg";
 import star from "../../assets/image/star.svg";
-import styles from "./SignUp.module.scss";
+import styles from "./SignUpForm.module.scss";
 import { useState } from "react";
-function SignUp({ login, password }) {
+function SignUp({ onSubmit }) {
   const [data, setData] = useState({
     login: "",
     password: "",
@@ -10,6 +10,7 @@ function SignUp({ login, password }) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    onSubmit(data);
   };
 
   const changeValueInput = (event, name) => {
@@ -34,7 +35,7 @@ function SignUp({ login, password }) {
         <img src={monsterHead} className={styles.imgMonsterHead} />
         <form onSubmit={handleFormSubmit} className={styles.formSign}>
           <input
-            placeholder={login}
+            placeholder="Введите логин"
             type="text"
             className={styles.inputForm}
             value={data.login}
@@ -43,7 +44,7 @@ function SignUp({ login, password }) {
           ></input>
           <input
             type="password"
-            placeholder={password}
+            placeholder="Введите пароль"
             className={styles.inputForm}
             value={data.password}
             onChange={(event) => changeValueInput(event, "password")}
