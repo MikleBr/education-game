@@ -1,0 +1,91 @@
+@import "../../assets/styles/vars.scss";
+
+.MainInfoPersonal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    padding-top: 41px;
+    display: flex;
+    justify-content: space-between;
+
+
+    .designElementBottom {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .containerInfoPersonal {
+        width: 68.68%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+}
+
+
+.infoPersonalCard {
+    background-color: #F5F5F5;
+    max-height: 849px;
+    max-width: 715px;
+    border: 3px solid $dark-brown ;
+
+
+}
+
+.containerUsername {
+    background-color: $orange;
+    border-radius: 37px;
+    padding: 20px 94px;
+    width: 715px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .containerPoint {
+
+        display: flex;
+        align-items: center;
+
+        .imgPoint {
+            padding-right: 5px;
+        }
+
+        .numberPoint {
+            color: $white;
+            font-weight: 300;
+            font-size: 54px;
+            line-height: 65px;
+
+        }
+    }
+
+    .usernameText {
+        color: $white;
+        font-weight: 300;
+        font-size: 54px;
+        line-height: 65px;
+    }
+}
+
+.containerUserLevel {
+    padding-top: 37px;
+    display: flex;
+    justify-content: center;
+
+    .userLevelText {
+        color: #000;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: 0.065em;
+        text-transform: uppercase;
+    }
+}
+
+.containerHonors {}
