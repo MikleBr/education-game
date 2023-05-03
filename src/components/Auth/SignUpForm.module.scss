@@ -1,10 +1,16 @@
-@import "../../assets/styles/vars.scss";
+@import "../../styles/vars.scss";
+
+.signupContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .containerLink {
   width: 100%;
   padding-top: 69px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .link {
@@ -23,18 +29,21 @@
   transition: 0.3s;
 }
 
-.imgStar {
-  position: relative;
-  top: -80px;
-}
+
 
 .containerForm {
-  position: absolute;
-  top: 150px;
+  position: relative;
+  width: 100%;
   max-width: 642px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.imgStar {
+  position: absolute;
+  top: -100px;
+  left: -360px;
 }
 
 .imgMonsterHead {
@@ -58,15 +67,20 @@
   margin-bottom: 16px;
   text-align: center;
   padding: 18px 0;
-}
 
-.inputForm::placeholder {
-  font-size: 42px;
-  color: #e8e8e8;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 42px;
-  line-height: 51px;
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &::placeholder {
+    font-size: 42px;
+    color: #e8e8e8;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    transition: all .2s ease;
+  }
 }
 
 .submitForm {
@@ -78,9 +92,9 @@
   color: #4b4545;
   transition-property: width;
   transition: 0.3s;
-}
 
-.submitForm:hover {
-  text-decoration: underline rgba(245, 144, 77, 0.94);
-  transition: 0, 3s;
+  &:hover {
+    text-decoration: underline rgba(245, 144, 77, 0.94);
+    transition: 0, 3s;
+  }
 }

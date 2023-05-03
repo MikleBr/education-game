@@ -1,14 +1,15 @@
-import monsterHead from "../../assets/image/monsterHead.svg";
-import star from "../../assets/image/star.svg";
-import styles from "./SignUpForm.module.scss";
-import { useState } from "react";
+import { Link } from 'react-router-dom';
+import monsterHead from '../../assets/image/monsterHead.svg';
+import star from '../../assets/image/star.svg';
+import styles from './SignUpForm.module.scss';
+import { useState } from 'react';
 function SignUp({ onSubmit }) {
   const [data, setData] = useState({
-    login: "",
-    password: "",
+    login: '',
+    password: '',
   });
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = event => {
     event.preventDefault();
     onSubmit(data);
   };
@@ -17,21 +18,16 @@ function SignUp({ onSubmit }) {
     setData({ ...data, [name]: event.target.value });
   };
 
-  const handleCreate = {
-    login: data.login,
-    password: data.password,
-  };
-
   return (
-    <>
+    <div className={styles.signupContainer}>
       <div className={styles.containerLink}>
-        <img src={star} className={styles.imgStar} />
-        <a href="#" className={styles.link}>
+        <Link to="/auth/signin" className={styles.link}>
           Вход
-        </a>
+        </Link>
       </div>
 
       <div className={styles.containerForm}>
+        <img src={star} className={styles.imgStar} />
         <img src={monsterHead} className={styles.imgMonsterHead} />
         <form onSubmit={handleFormSubmit} className={styles.formSign}>
           <input
@@ -39,7 +35,7 @@ function SignUp({ onSubmit }) {
             type="text"
             className={styles.inputForm}
             value={data.login}
-            onChange={(event) => changeValueInput(event, "login")}
+            onChange={event => changeValueInput(event, 'login')}
             required
           ></input>
           <input
@@ -47,7 +43,7 @@ function SignUp({ onSubmit }) {
             placeholder="Введите пароль"
             className={styles.inputForm}
             value={data.password}
-            onChange={(event) => changeValueInput(event, "password")}
+            onChange={event => changeValueInput(event, 'password')}
             required
           ></input>
           <button type="submit" className={styles.submitForm}>
@@ -55,7 +51,7 @@ function SignUp({ onSubmit }) {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

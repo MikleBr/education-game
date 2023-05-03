@@ -1,4 +1,10 @@
-@import "../../assets/styles/vars.scss";
+@import "../../styles/vars.scss";
+
+.signinContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .containerLink {
   width: 100%;
@@ -23,8 +29,8 @@
 }
 
 .containerForm {
-  position: absolute;
-  top: 150px;
+  position: relative;
+  width: 100%;
   max-width: 642px;
   display: flex;
   flex-direction: column;
@@ -41,38 +47,50 @@
 }
 
 .inputForm {
-  background: $orange;
-  max-width: 418px;
+  background: rgba(245, 144, 77, 0.94);
   border-radius: 16px;
   font-size: 42px;
-  color: $white;
+  color: #e8e8e8;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 42px;
   line-height: 51px;
   margin-bottom: 16px;
   text-align: center;
   padding: 18px 0;
-}
 
-.inputForm::placeholder {
-  font-size: 42px;
-  color: $white;
-  font-weight: 300;
-  font-size: 42px;
-  line-height: 51px;
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &::placeholder {
+    font-size: 42px;
+    color: #e8e8e8;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    transition: all .2s ease;
+  }
 }
 
 .submitForm {
   margin: 0 auto;
+  padding: 12px 24px;
+  border-radius: 16px;
   font-weight: 300;
   font-size: 54px;
   line-height: 65px;
   color: $dark-brown;
   transition-property: width;
   transition: 0.3s;
-}
 
-.submitForm:hover {
-  text-decoration: underline $orange;
-  transition: 0, 3s;
+  &:hover {
+    text-decoration: underline rgba(245, 144, 77, 0.94);
+    transition: 0, 3s;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
 }

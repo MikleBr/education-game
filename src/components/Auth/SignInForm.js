@@ -1,14 +1,16 @@
-import monsterHead from "../../assets/image/monsterHead.svg";
-import star from "../../assets/image/star.svg";
-import styles from "./SignInForm.module.scss";
-import { useState } from "react";
+import { useState } from 'react';
+
+import monsterHead from '../../assets/image/monsterHead.svg';
+import styles from './SignInForm.module.scss';
+import { Link } from 'react-router-dom';
+
 function SignInForm({ onSubmit }) {
   const [data, setData] = useState({
-    login: "",
-    password: "",
+    login: '',
+    password: '',
   });
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = event => {
     event.preventDefault();
     onSubmit(data);
   };
@@ -17,17 +19,12 @@ function SignInForm({ onSubmit }) {
     setData({ ...data, [name]: event.target.value });
   };
 
-  const handleCreate = {
-    login: data.login,
-    password: data.password,
-  };
-
   return (
-    <>
+    <div className={styles.signinContainer}>
       <div className={styles.containerLink}>
-        <a href="#" className={styles.link}>
+        <Link to="/auth/signup" className={styles.link}>
           Регистрация
-        </a>
+        </Link>
       </div>
 
       <div className={styles.containerForm}>
@@ -38,7 +35,7 @@ function SignInForm({ onSubmit }) {
             type="text"
             className={styles.inputForm}
             value={data.login}
-            onChange={(event) => changeValueInput(event, "login")}
+            onChange={event => changeValueInput(event, 'login')}
             required
           ></input>
           <input
@@ -46,7 +43,7 @@ function SignInForm({ onSubmit }) {
             placeholder="Введите пароль"
             className={styles.inputForm}
             value={data.password}
-            onChange={(event) => changeValueInput(event, "password")}
+            onChange={event => changeValueInput(event, 'password')}
             required
           ></input>
           <button type="submit" className={styles.submitForm}>
@@ -54,7 +51,7 @@ function SignInForm({ onSubmit }) {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
