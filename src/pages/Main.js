@@ -5,19 +5,18 @@ import HonorsMainPage from "../components/Main/HonorsMainPage";
 const Main = () => {
   return (
     <>
-      {/* <div>
-        <MainStartGame />
-      </div> */}
+      {/* <MainStartGame />
+
       <div>
-        {/* <MainInfoPersonal
+        <MainInfoPersonal
           userCountPoint={userInfo.userCountPoint}
           username={userInfo.username}
           userLevel={userInfo.userLevel}
-          
-          //создать папку data, создать в доке userInfo.js массив объектов со свойствами username, userCountPoint, userLevel
-        /> */}
-        <HonorsMainPage />
-      </div>
+
+          //создать папку data, создать в доке userInfo.js массив объектов со свойствами username, userCountPoint, userLevel */}
+      {/* /> */}
+      {/* </div> */}
+      <HonorsMainPage />
     </>
   );
 };

@@ -1,19 +1,18 @@
 const honors = [
   {
     numberHonor: 1,
-    isOpen: "Предсказание 1",
+    title: "Предсказание 1",
+    isOpen: false,
   },
   {
     numberHonor: 2,
-    isOpen: "Предсказание 2",
+    title: "Предсказание 2",
+    isOpen: true,
   },
   {
     numberHonor: 3,
-    isOpen: "Предсказание 3",
-  },
-  {
-    numberHonor: 4,
-    isOpen: "Предсказание 4",
+    title: "Предсказание 3",
+    isOpen: false,
   },
 ];
 

@@ -1,0 +1,28 @@
+@import "../../styles/vars.scss";
+
+.honorText,
+.honorQuestion {
+    width: 574px;
+    border-radius: 83px;
+}
+
+.honorQuestion {
+    background-color: $lightgreen;
+
+    img {
+        // width: 81px;
+        // height: 81px;
+
+    }
+}
+
+.honorText {
+    padding: 28px 0;
+    background-color: $orange;
+    color: #fff;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0.065em;
+    text-transform: uppercase;
+}

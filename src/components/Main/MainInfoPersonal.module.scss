@@ -1,11 +1,7 @@
 @import "../../styles/vars.scss";
 
 .MainInfoPersonal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+
     width: 100%;
     padding-top: 41px;
     display: flex;
@@ -30,7 +26,8 @@
 
 
 .infoPersonalCard {
-    background-color: #F5F5F5;
+    background-color: #fff;
+    border-radius: 37px;
     max-height: 849px;
     max-width: 715px;
     border: 3px solid $dark-brown;
@@ -42,7 +39,7 @@
     background-color: $orange;
     border-radius: 37px;
     padding: 20px 94px;
-    width: 715px;
+    width: 710px;
     display: flex;
     justify-content: space-between;
     align-items: center;
