@@ -1,5 +1,6 @@
-import styles from "./WrapperHonorMainPage.module.scss";
-import Question from "../../assets/image/questionHonor.png";
+import styles from './WrapperHonorMainPage.module.scss';
+import Question from '../../assets/image/questionHonor.png';
+
 const WrapperHonorMainPage = ({ title, isOpen }) => {
   return (
     <>

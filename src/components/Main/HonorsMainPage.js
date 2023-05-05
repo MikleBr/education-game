@@ -1,10 +1,10 @@
-import honors from "../../data/honors";
-import WrapperHonorForMainPage from "./WrapperHonorMainPage";
-import styles from "./HonorsMainPage.module.scss";
+import honors from '../../data/honors';
+import WrapperHonorForMainPage from './WrapperHonorMainPage';
+import styles from './HonorsMainPage.module.scss';
 const HonorsMainPage = () => {
   return (
     <div className={styles.containerHonors}>
-      {honors.map((honor) => {
+      {honors.map(honor => {
         return (
           <WrapperHonorForMainPage
             title={honor.title}
