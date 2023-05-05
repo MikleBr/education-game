@@ -6,7 +6,12 @@ import StarPoint from "../../assets/image/starPoint.svg";
 import StarOrange from "../../assets/image/starOrange.svg";
 import StarOrangeRight from "../../assets/image/StarOrangeRight.svg";
 
-const MainInfoPersonal = ({ userCountPoint, username, userLevel, honors }) => {
+const MainInfoPersonal = ({
+  userCountPoint,
+  username,
+  userLevel,
+  children,
+}) => {
   return (
     <>
       <div className={styles.MainInfoPersonal}>
@@ -29,9 +34,7 @@ const MainInfoPersonal = ({ userCountPoint, username, userLevel, honors }) => {
               <p className={styles.userLevelText}>{userLevel}</p>
               <img src={StarOrangeRight} />
             </div>
-            <div className={styles.containerHonors}>
-              //вставить компонент honor
-            </div>
+            <div className={styles.containerHonors}>{children}</div>
           </div>
         </div>
 

@@ -1,0 +1,49 @@
+@import "../../styles/vars.scss";
+
+
+.containerContentMain {
+    background-color: $green;
+}
+
+// .containerContentMain {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     .descriptionGame {
+//         padding-left: 93px;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+
+//         .descriptionGameText {
+//             max-width: 500px;
+//             padding-bottom: 67px;
+//             font-weight: 400;
+//             font-size: 24px;
+//             line-height: 29px;
+//             color: $white;
+//             text-align: center;
+//         }
+
+//         .descriptionGameButton {
+//             width: 40%;
+//             font-weight: 800;
+//             font-size: 26px;
+//             line-height: 31px;
+//             text-align: center;
+//             letter-spacing: 0.04em;
+//             color: $white;
+//             background-color: $lightgreen;
+//             padding: 11px 29px;
+//             border-radius: 16px;
+//             transition: all .2s ease-in-out;
+
+//             &:hover {
+//                 background-color: $green;
+
+//             }
+//         }
+//     }
+
+// }

@@ -2,21 +2,21 @@ import MainStartGame from "../components/Main/MainStartGame";
 import MainInfoPersonal from "../components/Main/MainInfoPersonal";
 import userInfo from "../data/userInfo";
 import HonorsMainPage from "../components/Main/HonorsMainPage";
+import MainFooterStartGame from "../components/Main/MainFooterStartGame";
 const Main = () => {
   return (
     <>
-      {/* <MainStartGame />
+      <MainStartGame />
 
-      <div>
-        <MainInfoPersonal
-          userCountPoint={userInfo.userCountPoint}
-          username={userInfo.username}
-          userLevel={userInfo.userLevel}
+      <MainInfoPersonal
+        userCountPoint={userInfo.userCountPoint}
+        username={userInfo.username}
+        userLevel={userInfo.userLevel}
+      >
+        <HonorsMainPage />
+      </MainInfoPersonal>
 
-          //создать папку data, создать в доке userInfo.js массив объектов со свойствами username, userCountPoint, userLevel */}
-      {/* /> */}
-      {/* </div> */}
-      <HonorsMainPage />
+      <MainFooterStartGame />
     </>
   );
 };

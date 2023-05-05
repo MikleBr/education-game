@@ -1,5 +1,5 @@
 import styles from "./WrapperHonorMainPage.module.scss";
-import Question from "../../assets/image/questionHonor.svg";
+import Question from "../../assets/image/questionHonor.png";
 const WrapperHonorMainPage = ({ title, isOpen }) => {
   return (
     <>
@@ -7,7 +7,7 @@ const WrapperHonorMainPage = ({ title, isOpen }) => {
         <button className={styles.honorText}>{title}</button>
       ) : (
         <button className={styles.honorQuestion}>
-          <img src={Question} /> //заменить картинку
+          <img src={Question} />
         </button>
       )}
     </>

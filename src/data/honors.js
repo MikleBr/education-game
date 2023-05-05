@@ -1,17 +1,22 @@
 const honors = [
   {
-    numberHonor: 1,
+    id: 1,
     title: "Предсказание 1",
-    isOpen: false,
-  },
-  {
-    numberHonor: 2,
-    title: "Предсказание 2",
     isOpen: true,
   },
   {
-    numberHonor: 3,
+    id: 2,
+    title: "Предсказание 2",
+    isOpen: false,
+  },
+  {
+    id: 3,
     title: "Предсказание 3",
+    isOpen: false,
+  },
+  {
+    id: 4,
+    title: "Предсказание 4",
     isOpen: false,
   },
 ];

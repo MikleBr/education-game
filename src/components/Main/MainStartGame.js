@@ -1,5 +1,5 @@
 import styles from "./MainStartGame.module.scss";
-import PurpleBottom from "../../assets/image/color-purple-bottom.svg";
+import PurpleWave from "../../assets/image/color-purple-wave.svg";
 import Monster from "../../assets/image/Monster.svg";
 const MainStartGame = () => {
   return (
@@ -27,7 +27,7 @@ const MainStartGame = () => {
           </div>
         </div>
       </div>
-      <img src={PurpleBottom} />
+      <img src={PurpleWave} />
     </>
   );
 };
