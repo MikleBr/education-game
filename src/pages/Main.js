@@ -1,8 +1,8 @@
-import MainStartGame from '../components/Main/MainStartGame';
-import MainInfoPersonal from '../components/Main/MainInfoPersonal';
-import userInfo from '../data/userInfo';
-import HonorsMainPage from '../components/Main/HonorsMainPage';
-import MainFooterStartGame from '../components/Main/MainFooterStartGame';
+import MainStartGame from "../components/Main/MainHeaderStartGame";
+import MainInfoPersonal from "../components/Main/MainInfoPersonal";
+import userInfo from "../data/userInfo";
+import HonorsMainPage from "../components/Main/HonorsMainPage";
+import MainFooterStartGame from "../components/Main/MainFooterStartGame";
 const Main = () => {
   return (
     <>
