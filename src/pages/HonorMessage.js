@@ -29,6 +29,9 @@ const HonorMessage = () => {
           </div>
         </div>
       </div>
+      <div className={styles.containerButtonRout}>
+        <button className={styles.buttonRout}>Вернуться на главную</button>
+      </div>
     </div>
   );
 };
