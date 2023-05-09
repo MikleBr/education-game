@@ -1,0 +1,75 @@
+@import "../styles/vars.scss";
+
+.designElements {
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+
+    .containerUfoDesign {
+        display: flex;
+        flex-direction: column;
+
+        .elementUfo {}
+
+        .elementSmallConfetti {
+            position: relative;
+            bottom: 120px;
+        }
+    }
+
+    .elementBigConfetti {
+        position: relative;
+        bottom: 120px;
+    }
+}
+
+.containerContent {
+    position: relative;
+    bottom: 200px;
+    width: 100%;
+    left: 150px;
+
+    display: flex;
+
+    .containerMessage {
+        position: relative;
+        bottom: 200px;
+        right: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 653px;
+        }
+
+        .containerMessageText {
+            position: absolute;
+            bottom: 220px;
+            left: 180px;
+            max-width: 371px;
+            text-align: center;
+
+
+            .MessageTitle {
+
+                padding-bottom: 50px;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 39px;
+                color: $white;
+            }
+
+            .messageText {
+                max-width: 377px;
+                font-weight: 500;
+                font-size: 22.9132px;
+                line-height: 28px;
+                color: $white;
+            }
+        }
+
+
+
+    }
+}
