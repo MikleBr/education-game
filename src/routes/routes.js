@@ -5,6 +5,7 @@ import Main from "../pages/Main";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import HonorMessage from "../pages/HonorMessage";
+import FinishedGameMessage from "../pages/FinishedGameMessage";
 
 const Routing = () => {
   const routesList = [
@@ -17,8 +18,12 @@ const Routing = () => {
           element: <Main />,
         },
         {
-          path: "/test",
+          path: "/honorMessage",
           element: <HonorMessage />,
+        },
+        {
+          path: "/finishedGame",
+          element: <FinishedGameMessage />,
         },
       ],
     },
