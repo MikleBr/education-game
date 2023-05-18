@@ -1,8 +1,7 @@
 const userInfo = {
-  username: "Мария",
-  userSurname: "Иванова",
-  userCountPoint: 35,
-  userLevel: "Новичок Планеты",
+  name: 'Мария',
+  surname: 'Иванова',
+  rating: 0,
 };
 
 export default userInfo;

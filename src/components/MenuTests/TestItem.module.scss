@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
 
+    cursor: pointer;
+
     margin-bottom: 38px;
     width: 574px;
     border-radius: 83px;
@@ -13,7 +15,6 @@
 
 .honorQuestion {
     background-color: $lightgreen;
-    cursor: default;
 
     img {
         padding: 8px 0;

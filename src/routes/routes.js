@@ -1,38 +1,49 @@
-import React from "react";
-import { useRoutes } from "react-router-dom";
-import PublicLayout from "../layouts/Public";
-import Main from "../pages/Main";
-import SignIn from "../pages/SignIn";
-import SignUp from "../pages/SignUp";
-import HonorMessage from "../pages/HonorMessage";
-import FinishedGameMessage from "../pages/FinishedGameMessage";
+import React from 'react';
+import { useRoutes } from 'react-router-dom';
+import PublicLayout from '../layouts/Public';
+import Main from '../pages/Main';
+import SignIn from '../pages/SignIn';
+import SignUp from '../pages/SignUp';
+import HonorMessage from '../pages/HonorMessage';
+import FinishedGameMessage from '../pages/FinishedGameMessage';
+import Test from '../pages/Test';
 
 const Routing = () => {
   const routesList = [
     {
-      path: "",
+      path: '',
       element: <PublicLayout />,
       children: [
         {
-          path: "/",
+          path: '/',
           element: <Main />,
         },
         {
-          path: "/honorMessage",
-          element: <HonorMessage />,
-        },
-        {
-          path: "/finishedGame",
+          path: '/finishedGame',
           element: <FinishedGameMessage />,
         },
       ],
     },
     {
-      path: "auth",
+      path: '/tests',
       element: <PublicLayout />,
       children: [
-        { path: "signin", element: <SignIn /> },
-        { path: "signup", element: <SignUp /> },
+        {
+          path: ':id',
+          element: <Test />,
+        },
+        {
+          path: ':id/honor',
+          element: <HonorMessage />,
+        },
+      ],
+    },
+    {
+      path: '/auth',
+      element: <PublicLayout />,
+      children: [
+        { path: 'signin', element: <SignIn /> },
+        { path: 'signup', element: <SignUp /> },
       ],
     },
   ];

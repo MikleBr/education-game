@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import monsterHead from '../../assets/image/monsterHead.svg';
 import star from '../../assets/image/star.svg';
 import styles from './SignUpForm.module.scss';
 import { useState } from 'react';
 function SignUp({ onSubmit }) {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     login: '',
     password: '',
@@ -12,6 +13,7 @@ function SignUp({ onSubmit }) {
   const handleFormSubmit = event => {
     event.preventDefault();
     onSubmit(data);
+    navigate('/');
   };
 
   const changeValueInput = (event, name) => {

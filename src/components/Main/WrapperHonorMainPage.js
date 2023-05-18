@@ -1,14 +1,14 @@
 import styles from './WrapperHonorMainPage.module.scss';
 import Question from '../../assets/image/questionHonor.png';
 
-const WrapperHonorMainPage = ({ title, isOpen }) => {
+const WrapperHonorMainPage = ({ title, open, onClick }) => {
   return (
     <>
-      {isOpen ? (
+      {open ? (
         <button className={styles.honorText}>{title}</button>
       ) : (
-        <button className={styles.honorQuestion}>
-          <img src={Question} />
+        <button onClick={onClick} className={styles.honorQuestion}>
+          <img src={Question} alt="" />
         </button>
       )}
     </>

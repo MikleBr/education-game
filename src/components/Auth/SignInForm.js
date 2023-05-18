@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import monsterHead from '../../assets/image/monsterHead.svg';
 import styles from './SignInForm.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignInForm({ onSubmit }) {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     login: '',
     password: '',
@@ -13,6 +14,7 @@ function SignInForm({ onSubmit }) {
   const handleFormSubmit = event => {
     event.preventDefault();
     onSubmit(data);
+    navigate('/');
   };
 
   const changeValueInput = (event, name) => {

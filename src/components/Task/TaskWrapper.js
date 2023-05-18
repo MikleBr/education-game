@@ -1,7 +1,14 @@
-import starPoint from "../../assets/image/starPoint.svg";
-import monsterEye from "../../assets/image/monsterEye.svg";
-import styles from "./TaskWrapper.module.scss";
-function TaskWrapper({ userName, userPoint, textTask, children, onSubmit }) {
+import starPoint from '../../assets/image/starPoint.svg';
+import monsterEye from '../../assets/image/monsterEye.svg';
+import styles from './TaskWrapper.module.scss';
+function TaskWrapper({
+  userName,
+  error,
+  userPoint,
+  textTask,
+  children,
+  onSubmit,
+}) {
   return (
     <div className={styles.TaskWrapper}>
       <div className={styles.containerUser}>
@@ -17,8 +24,13 @@ function TaskWrapper({ userName, userPoint, textTask, children, onSubmit }) {
         <div className={styles.containerTextTask}>
           <p className={styles.textTask}>{textTask}</p>
         </div>
+        {error && (
+          <div className={styles.error}>
+            Неправильный ответ ;( Попробуй еще раз!
+          </div>
+        )}
 
-        <div className={styles.containerAnswer}>{children}</div>
+        {children}
 
         <button type="submit" className={styles.submitTask}>
           Отправить

@@ -1,5 +1,6 @@
-import styles from "./MainHeaderStartGame.module.scss";
-import Monster from "../../assets/image/Monster.svg";
+import styles from './MainHeaderStartGame.module.scss';
+import Monster from '../../assets/image/Monster.svg';
+import { Link } from 'react-router-dom';
 const MainStartGame = () => {
   return (
     <>
@@ -9,10 +10,10 @@ const MainStartGame = () => {
             <div className={styles.designCircleBig}></div>
             <div className={styles.designCircleSmall}></div>
           </div>
-          <a href="#">Выйти из игры</a>
+          <Link to="/auth/signin">Выйти из игры</Link>
         </div>
         <div className={styles.containerContentMain}>
-          <img src={Monster} />
+          <img src={Monster} alt="monster" />
           <div className={styles.descriptionGame}>
             <p className={styles.descriptionGameText}>
               Привет, меня зовут Мунк! Я прилетел изучить планету Земля, но это

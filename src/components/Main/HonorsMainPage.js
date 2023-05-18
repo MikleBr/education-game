@@ -1,18 +1,10 @@
-import honors from '../../data/honors';
-import WrapperHonorForMainPage from './WrapperHonorMainPage';
 import styles from './HonorsMainPage.module.scss';
-const HonorsMainPage = () => {
+import MenuTestsList from '../MenuTests/MenuTestsList';
+
+const HonorsMainPage = ({ tests }) => {
   return (
     <div className={styles.containerHonors}>
-      {honors.map(honor => {
-        return (
-          <WrapperHonorForMainPage
-            title={honor.title}
-            isOpen={honor.isOpen}
-            key={honor.id}
-          />
-        );
-      })}
+      <MenuTestsList tests={tests} />
     </div>
   );
 };

@@ -9,6 +9,11 @@
 
 }
 
+.error {
+    font-size: 50px;
+    color: red;
+}
+
 .containerUser {
     width: 95%;
     display: flex;
@@ -64,21 +69,6 @@
             color: $white;
             word-wrap: break-word;
         }
-    }
-
-    .containerAnswer {
-        width: 100%;
-        margin: 51px auto 64px auto;
-        max-width: 888px;
-        border: 6px solid $accent;
-        border-radius: 14px;
-        padding: 61px;
-        font-size: 40px;
-        font-style: italic;
-        line-height: 48px;
-        color: $dark-brown;
-        word-wrap: break-word;
-        text-align: center;
     }
 
     .submitTask {
