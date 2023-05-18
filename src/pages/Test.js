@@ -39,6 +39,12 @@ const Test = () => {
         setCurrentTask(uncompletedTask);
       } else {
         currentTest.completed = true;
+        const finishedTests = tests
+          .filter(test => test.completed)
+          .map(test => test.id)
+          .join(',');
+        console.log('finishedTest :', finishedTests);
+        window.localStorage.setItem('finishedTests', finishedTests);
         navigate(`/tests/${id}/honor`);
       }
     } else {
