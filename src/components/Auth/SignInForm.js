@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import monsterHead from '../../assets/image/monsterHead.svg';
-import styles from './SignInForm.module.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import monsterHead from "../../assets/image/monsterHead.svg";
+import styles from "./SignInForm.module.scss";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignInForm({ onSubmit }) {
   const navigate = useNavigate();
   const [data, setData] = useState({
-    login: '',
-    password: '',
+    login: "",
+    password: "",
   });
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     onSubmit(data);
-    navigate('/');
+    navigate("/");
   };
 
   const changeValueInput = (event, name) => {
@@ -22,7 +22,7 @@ function SignInForm({ onSubmit }) {
   };
 
   return (
-    <div className={styles.signinContainer}>
+    <div className={styles.container}>
       <div className={styles.containerLink}>
         <Link to="/auth/signup" className={styles.link}>
           Регистрация
@@ -37,7 +37,7 @@ function SignInForm({ onSubmit }) {
             type="text"
             className={styles.inputForm}
             value={data.login}
-            onChange={event => changeValueInput(event, 'login')}
+            onChange={(event) => changeValueInput(event, "login")}
             required
           ></input>
           <input
@@ -45,7 +45,7 @@ function SignInForm({ onSubmit }) {
             placeholder="Введите пароль"
             className={styles.inputForm}
             value={data.password}
-            onChange={event => changeValueInput(event, 'password')}
+            onChange={(event) => changeValueInput(event, "password")}
             required
           ></input>
           <button type="submit" className={styles.submitForm}>

@@ -1,19 +1,19 @@
-import { Link, useNavigate } from 'react-router-dom';
-import monsterHead from '../../assets/image/monsterHead.svg';
-import star from '../../assets/image/star.svg';
-import styles from './SignUpForm.module.scss';
-import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import monsterHead from "../../assets/image/monsterHead.svg";
+import star from "../../assets/image/star.svg";
+import styles from "./SignUpForm.module.scss";
+import { useState } from "react";
 function SignUp({ onSubmit }) {
   const navigate = useNavigate();
   const [data, setData] = useState({
-    login: '',
-    password: '',
+    login: "",
+    password: "",
   });
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     onSubmit(data);
-    navigate('/');
+    navigate("/");
   };
 
   const changeValueInput = (event, name) => {
@@ -21,7 +21,7 @@ function SignUp({ onSubmit }) {
   };
 
   return (
-    <div className={styles.signupContainer}>
+    <div className={styles.container}>
       <div className={styles.containerLink}>
         <Link to="/auth/signin" className={styles.link}>
           Вход
@@ -37,7 +37,7 @@ function SignUp({ onSubmit }) {
             type="text"
             className={styles.inputForm}
             value={data.login}
-            onChange={event => changeValueInput(event, 'login')}
+            onChange={(event) => changeValueInput(event, "login")}
             required
           ></input>
           <input
@@ -45,7 +45,7 @@ function SignUp({ onSubmit }) {
             placeholder="Введите пароль"
             className={styles.inputForm}
             value={data.password}
-            onChange={event => changeValueInput(event, 'password')}
+            onChange={(event) => changeValueInput(event, "password")}
             required
           ></input>
           <button type="submit" className={styles.submitForm}>
