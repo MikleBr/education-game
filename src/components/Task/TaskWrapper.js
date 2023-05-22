@@ -1,6 +1,6 @@
-import starPoint from '../../assets/image/starPoint.svg';
-import monsterEye from '../../assets/image/monsterEye.svg';
-import styles from './TaskWrapper.module.scss';
+import starPoint from "../../assets/image/starPoint.svg";
+import monsterEye from "../../assets/image/monsterEye.svg";
+import styles from "./TaskWrapper.module.scss";
 function TaskWrapper({
   userName,
   error,
@@ -10,12 +10,20 @@ function TaskWrapper({
   onSubmit,
 }) {
   return (
-    <div className={styles.TaskWrapper}>
+    <div className={styles.container}>
       <div className={styles.containerUser}>
-        {/* <p className={styles.userName}>{userName}</p> */}
-        <div className={styles.containerPoint}>
-          <img src={starPoint} className={styles.imgPoint} />
-          <p className={styles.numberPoint}>{userPoint}</p>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div className={styles.containerPoint}>
+            <img src={starPoint} className={styles.imgPoint} />
+            <p className={styles.numberPoint}>{userPoint}</p>
+          </div>
+          <a className={styles.linkToMain}>Вернуться на главную</a>
         </div>
       </div>
 
