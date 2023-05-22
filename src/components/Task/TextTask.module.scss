@@ -1,20 +1,16 @@
 @import "../../styles/vars.scss";
+@import "../../styles/media_mixin.scss";
 
 .userAnswerInput {
-    font-size: 40px;
-    font-style: italic;
-    line-height: 48px;
-    text-align: center;
-
     width: 100%;
     margin: 51px auto 64px auto;
     max-width: 888px;
     border: 6px solid $accent;
     border-radius: 14px;
-    padding: 61px;
-    font-size: 40px;
+    padding: 36px;
+    font-size: 28.9362px;
+    line-height: 35px;
     font-style: italic;
-    line-height: 48px;
     color: $dark-brown;
     word-wrap: break-word;
     text-align: center;
@@ -30,14 +26,34 @@
             opacity: 0;
         }
     }
+
+    @include _720 {
+        font-size: 23.2754px;
+        line-height: 28px;
+    }
+
+    @include _480 {
+        font-size: 22.54px;
+        line-height: 27px;
+        padding: 23px;
+    }
 }
 
 .selectTitle {
     margin: 40px 0 20px 0;
     width: 100%;
     text-align: left;
-    font-size: 50px;
+    font-size: 25px;
     font-weight: 600;
+
+    @include _720 {
+        font-size: 20px;
+    }
+
+    @include _480 {
+        margin: 25px 0 10px 0;
+        font-size: 15px;
+    }
 }
 
 .answersList {
@@ -48,17 +64,25 @@
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+
+    @include _720 {
+        row-gap: 15px;
+    }
+
+    @include _480 {
+        row-gap: 10px;
+    }
 }
 
 .selectTaskButton {
     width: 100%;
     color: white;
-    padding: 16px;
+    padding: 10px;
     background: #9082E1;
     border: 1px solid #CFC9EF;
     border-radius: 42px;
-    font-size: 48px;
-
+    font-size: 37.3763px;
+    line-height: 45px;
     transition: all .2s ease;
 
     &:hover {
@@ -76,4 +100,11 @@
             background: #F49657;
         }
     }
+
+    @include _720 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
 }
