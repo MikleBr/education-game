@@ -1,6 +1,7 @@
 import starPoint from "../../assets/image/starPoint.svg";
 import monsterEye from "../../assets/image/monsterEye.svg";
 import styles from "./TaskWrapper.module.scss";
+import { useNavigate } from "react-router-dom";
 function TaskWrapper({
   userName,
   error,
@@ -9,6 +10,7 @@ function TaskWrapper({
   children,
   onSubmit,
 }) {
+  const navigate = useNavigate();
   return (
     <div className={styles.container}>
       <div className={styles.containerUser}>
@@ -23,7 +25,14 @@ function TaskWrapper({
             <img src={starPoint} className={styles.imgPoint} />
             <p className={styles.numberPoint}>{userPoint}</p>
           </div>
-          <a className={styles.linkToMain}>Вернуться на главную</a>
+          <a
+            onClick={() => {
+              navigate("/");
+            }}
+            className={styles.linkToMain}
+          >
+            Вернуться на главную
+          </a>
         </div>
       </div>
 
