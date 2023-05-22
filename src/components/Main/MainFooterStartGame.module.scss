@@ -1,14 +1,16 @@
 @import "../../styles/vars.scss";
-
-
-.containerForBackground {
-    background-color: $green;
-}
+@import "../../styles/media_mixin.scss";
 
 .wave {
     position: relative;
     top: 10px;
 }
+
+.containerForBackground {
+    background-color: $green;
+}
+
+
 
 .containerContentMain {
 
@@ -16,11 +18,20 @@
     align-items: center;
     justify-content: center;
 
+    img {
+        padding-top: 31px;
+        width: 314px;
+    }
+
     .descriptionGame {
         padding-left: 93px;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include _920 {
+            padding-left: 0;
+        }
 
         .descriptionGameText {
             max-width: 500px;
@@ -30,10 +41,61 @@
             line-height: 29px;
             color: $white;
             text-align: center;
+
+            @include _720 {
+                padding-right: 20px;
+                font-size: 23px;
+                line-height: 133.52%;
+                max-width: 411px;
+            }
         }
 
         .descriptionGameButton {
-            width: 50%;
+            font-weight: 800;
+            font-size: 26px;
+            line-height: 31px;
+            text-align: center;
+            letter-spacing: 0.04em;
+            color: $white;
+            background-color: $orange;
+            padding: 11px 29px;
+            border-radius: 16px;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                background-color: rgb(255, 94, 0);
+
+            }
+
+
+        }
+    }
+
+}
+
+.containerContentMainAdaptive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .descriptionGameAdaptive {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .descriptionGameTextAdaptive {
+
+            max-width: 344px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-weight: 400;
+            font-size: 23px;
+            line-height: 133.52%;
+            color: $white;
+            text-align: center;
+        }
+
+        .descriptionGameButtonAdaptive {
             font-weight: 800;
             font-size: 26px;
             line-height: 31px;
@@ -50,6 +112,11 @@
 
             }
         }
+    }
+
+    img {
+        padding-top: 31px;
+        width: 314px;
     }
 
 }

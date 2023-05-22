@@ -27,13 +27,13 @@
     position: relative;
     bottom: 200px;
     width: 963px;
-    left: 150px;
+    left: 300px;
     display: flex;
 
     .containerMessage {
         position: relative;
         bottom: 200px;
-        right: 50px;
+        right: 30px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -44,7 +44,7 @@
 
         .containerMessageText {
             position: absolute;
-            bottom: 240px;
+            bottom: 230px;
             left: 140px;
             max-width: 371px;
             text-align: center;
@@ -52,9 +52,9 @@
 
             .MessageTitle {
 
-                padding-bottom: 50px;
+                padding-bottom: 20px;
                 font-weight: 700;
-                font-size: 32px;
+                font-size: 28px;
                 line-height: 39px;
                 color: $white;
             }
@@ -62,7 +62,7 @@
             .messageText {
                 max-width: 377px;
                 font-weight: 500;
-                font-size: 22.9132px;
+                font-size: 18px;
                 line-height: 28px;
                 color: $white;
             }

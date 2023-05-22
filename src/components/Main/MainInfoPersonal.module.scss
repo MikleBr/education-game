@@ -1,37 +1,74 @@
 @import "../../styles/vars.scss";
+@import "../../styles/media_mixin.scss";
 
 .MainInfoPersonal {
-    padding-top: 41px;
-    padding-bottom: 71px;
     width: 100%;
+    padding-top: 41px;
+    padding-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
+    @include _720 {
+        padding-top: 0;
+    }
 
     .designElementBottom {
+        padding-right: 30px;
+        width: 195px;
         display: flex;
         align-items: flex-end;
+
+        @include _920 {
+            width: 130px;
+        }
     }
 
-    .containerInfoPersonal {
-        width: 68.68%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .designElementTop {
+        width: 173px;
+
+        @include _720 {
+            width: 303px;
+        }
+
 
     }
 
+
+
+}
+
+.containerInfoPersonal {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .imgMonster {
+        width: 266px;
+
+        @include _720 {
+            width: 303px;
+        }
+
+        @include _480 {
+            width: 200px;
+        }
+    }
 }
 
 
 .infoPersonalCard {
     background-color: #fff;
     border-radius: 37px;
-    max-height: 849px;
-    max-width: 715px;
+    padding-bottom: 20px;
 
-    padding-bottom: 53px;
+    @include _720 {
+        width: 526px;
+    }
+
+    @include _480 {
+        width: 356px;
+    }
 
 
 }
@@ -39,50 +76,110 @@
 .containerUsername {
     background-color: $orange;
     border-radius: 37px;
-    padding: 20px 94px;
-    width: 710px;
+    padding: 13px 57px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+
 
     .containerPoint {
-
+        padding-right: 148px;
         display: flex;
         align-items: center;
 
+        @include _720 {
+            padding-right: 213px;
+        }
+
+        @include _480 {
+            padding-right: 144px;
+        }
+
         .imgPoint {
+            width: 36px;
             padding-right: 5px;
+
+            @include _720 {
+                width: 41px;
+            }
+
+            @include _480 {
+                width: 27px;
+            }
         }
 
         .numberPoint {
-            color: $white;
+            color: #FFFFFF;
             font-weight: 300;
-            font-size: 54px;
-            line-height: 65px;
+            font-size: 34px;
+            line-height: 42px;
+
+            @include _720 {
+                font-size: 32px;
+                line-height: 39px;
+            }
+
+            @include _480 {
+                font-size: 20px;
+                line-height: 24px;
+            }
 
         }
     }
 
     .usernameText {
-        color: $white;
-        font-weight: 300;
-        font-size: 54px;
-        line-height: 65px;
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 42px;
+
+        @include _720 {
+            font-size: 32px;
+            line-height: 39px;
+        }
+
+        @include _480 {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 }
 
 .containerUserLevel {
-    padding-top: 37px;
+    padding: 23px 0 10px 0;
     display: flex;
     justify-content: center;
+
+    img {
+        width: 73px;
+
+        @include _720 {
+            width: 84px;
+        }
+
+        @include _480 {
+            width: 56px;
+        }
+    }
 
     .userLevelText {
         color: #000;
         font-weight: 400;
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 25px;
+        line-height: 31px;
         letter-spacing: 0.065em;
         text-transform: uppercase;
         text-align: center;
+
+        @include _720 {
+            font-size: 32px;
+            line-height: 39px;
+
+        }
+
+        @include _480 {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 }

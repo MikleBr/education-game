@@ -1,5 +1,5 @@
-import styles from './TestItem.module.scss';
-import Question from '../../assets/image/questionHonor.png';
+import styles from "./TestItem.module.scss";
+import Question from "../../assets/image/questionHonor.png";
 
 const TestItem = ({ title, open, onClick }) => {
   if (open) {

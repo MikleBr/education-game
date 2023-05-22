@@ -1,6 +1,7 @@
 @import "../../styles/vars.scss";
+@import "../../styles/media_mixin.scss";
 
-.containerContent {
+.container {
     padding: 0 50px 0 66px;
     width: 100%;
     background-color: $accent;
@@ -13,9 +14,13 @@
         padding-top: 32px;
 
         .containerDesignCircle {
+
             display: flex;
             padding-top: 22px;
 
+            @include _920 {
+                visibility: hidden;
+            }
 
             .designCircleBig {
                 margin: 23px 20px 0 0;
@@ -44,54 +49,183 @@
             &:hover {
                 color: $orange;
             }
-        }
-    }
 
-    .containerContentMain {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+            @include _920 {
+                font-size: 16px;
 
-        .descriptionGame {
-            padding-left: 93px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .descriptionGameText {
-                max-width: 500px;
-                padding-bottom: 67px;
-                font-weight: 400;
-                font-size: 24px;
-                line-height: 29px;
-                color: $white;
-                text-align: center;
-            }
-
-            .descriptionGameButton {
-                width: 40%;
-                font-weight: 800;
-                font-size: 26px;
-                line-height: 31px;
-                text-align: center;
-                letter-spacing: 0.04em;
-                color: $white;
-                background-color: $lightgreen;
-                padding: 11px 29px;
-                border-radius: 16px;
-                transition: all .2s ease-in-out;
-
-                &:hover {
-                    background-color: $green;
-
-                }
             }
         }
-
     }
 }
+
+.containerContentMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    .descriptionGame {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 43px;
+
+
+
+
+        .descriptionGameText {
+            max-width: 500px;
+            padding-bottom: 30px;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+            color: $white;
+
+
+            @include _1170 {
+                font-size: 18px;
+            }
+
+
+        }
+
+        .descriptionGameButton {
+            font-weight: 800;
+            font-size: 26px;
+            line-height: 31px;
+            text-align: center;
+            letter-spacing: 0.04em;
+            color: $white;
+            background-color: $lightgreen;
+            padding: 11px 29px;
+            border-radius: 16px;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                background-color: $green;
+
+            }
+
+            @include _1170 {
+                font-size: 23px;
+            }
+
+
+        }
+    }
+
+}
+
+
+//adaptive-version
+
+
+.containerContentMainAdaptive {
+
+    .descriptionGameTextAdaptive {
+        padding-bottom: 30px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: $white;
+
+        @include _1170 {
+            font-size: 18px;
+        }
+
+        @include _480 {
+            font-size: 16px;
+        }
+
+
+    }
+
+    .descriptionGameButtonAdaptive {
+        font-weight: 800;
+        font-size: 26px;
+        line-height: 31px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: $white;
+        background-color: $lightgreen;
+        padding: 11px 29px;
+        border-radius: 16px;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background-color: $green;
+
+        }
+
+        @include _480 {
+            font-size: 20px;
+            padding: 9px 24px;
+        }
+
+    }
+
+    .containerDesignCircleAdaptive {
+
+        display: flex;
+        justify-content: space-between;
+
+
+
+        .designCircleBigAdaptive {
+            margin: 91px 20px 0 0;
+            border-radius: 50px;
+            width: 93px;
+            height: 93px;
+            background-color: $lightgreen;
+
+            @include _480 {
+                margin: 137px 12px 0 0;
+                width: 73px;
+                height: 73px;
+            }
+        }
+
+        .designCircleSmallAdaptive {
+            margin-top: 60px;
+            border-radius: 50px;
+            width: 65px;
+            height: 65px;
+            background-color: $lightgreen;
+
+            @include _480 {
+                margin-top: 74px;
+                width: 53px;
+                height: 53px;
+            }
+        }
+
+        .imgMonsterAdaptive {
+            width: 261px;
+
+            @include _480 {
+                width: 232px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
 
 .wave {
     position: relative;
     bottom: 20px;
+
+    @include _1170 {
+        bottom: 0;
+    }
+
+    @include _920 {
+        bottom: 30px;
+    }
 }

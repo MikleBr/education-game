@@ -16,16 +16,33 @@ const MainFooterStartGame = () => {
         ></path>
       </svg>
       <div className={styles.containerForBackground}>
-        <div className={styles.containerContentMain}>
-          <img src={Monster} />
-          <div className={styles.descriptionGame}>
-            <p className={styles.descriptionGameText}>
-              В пути тебе встретится множество разных заданий, которые помогут
-              мне понять твою планету. Ты готов?
-            </p>
-            <button className={styles.descriptionGameButton}>к заданиям</button>
+        {window.innerWidth >= 480 ? (
+          <div className={styles.containerContentMain}>
+            <img src={Monster} />
+            <div className={styles.descriptionGame}>
+              <p className={styles.descriptionGameText}>
+                В пути тебе встретится множество разных заданий, которые помогут
+                мне понять твою планету. Ты готов?
+              </p>
+              <button className={styles.descriptionGameButton}>
+                к заданиям
+              </button>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className={styles.containerContentMainAdaptive}>
+            <div className={styles.descriptionGameAdaptive}>
+              <p className={styles.descriptionGameTextAdaptive}>
+                В пути тебе встретится множество разных заданий, которые помогут
+                мне понять твою планету. Ты готов?
+              </p>
+              <button className={styles.descriptionGameButtonAdaptive}>
+                к заданиям
+              </button>
+            </div>
+            <img src={Monster} />
+          </div>
+        )}
       </div>
     </>
   );
