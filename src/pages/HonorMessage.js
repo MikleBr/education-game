@@ -1,16 +1,16 @@
-import styles from './HonorMessage.module.scss';
-import Monster from '../assets/image/Monster.svg';
-import Ufo from '../assets/image/ufo.svg';
-import smallConfetti from '../assets/image/smallConfetti.svg';
-import bigConfetti from '../assets/image/bigConfetti.svg';
-import greenMessage from '../assets/image/greenMessage.svg';
-import { useNavigate, useParams } from 'react-router-dom';
-import { tests } from '../data/tests';
+import styles from "./HonorMessage.module.scss";
+import Monster from "../assets/image/Monster.svg";
+import Ufo from "../assets/image/ufo.svg";
+import smallConfetti from "../assets/image/smallConfetti.svg";
+import bigConfetti from "../assets/image/bigConfetti.svg";
+import greenMessage from "../assets/image/greenMessage.svg";
+import { useNavigate, useParams } from "react-router-dom";
+import { tests } from "../data/tests";
 
 const HonorMessage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const currentTest = tests.find(test => test.id === +id);
+  const currentTest = tests.find((test) => test.id === +id);
 
   const honor = currentTest.honor;
   const honorTitle = honor.title;
@@ -26,7 +26,7 @@ const HonorMessage = () => {
         <img src={bigConfetti} className={styles.elementBigConfetti} />
       </div>
       <div className={styles.containerContent}>
-        <img src={Monster} />
+        <img src={Monster} className={styles.imgMonster} />
         <div className={styles.containerMessage}>
           <img src={greenMessage} />
           <div className={styles.containerMessageText}>
@@ -38,7 +38,7 @@ const HonorMessage = () => {
       <div className={styles.containerButtonRout}>
         <button
           onClick={() => {
-            navigate('/');
+            navigate("/");
           }}
           className={styles.buttonRout}
         >

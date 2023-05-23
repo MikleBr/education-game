@@ -11,8 +11,17 @@
 }
 
 .error {
-    font-size: 50px;
+    padding-top: 20px;
+    font-size: 30px;
     color: red;
+
+    @include _720 {
+        font-size: 25px;
+    }
+
+    @include _480 {
+        font-size: 20px;
+    }
 }
 
 .containerUser {
