@@ -17,13 +17,10 @@ const HonorMessage = () => {
   const honorText = honor.text;
 
   return (
-    <div>
-      <div className={styles.designElements}>
-        <div className={styles.containerUfoDesign}>
-          <img src={Ufo} className={styles.elementUfo} />
-          <img src={smallConfetti} className={styles.elementSmallConfetti} />
-        </div>
-        <img src={bigConfetti} className={styles.elementBigConfetti} />
+    <div style={{ display: "flex", paddingTop: "50px" }}>
+      <div className={styles.containerUfoDesign}>
+        <img src={Ufo} className={styles.elementUfo} />
+        <img src={smallConfetti} className={styles.elementSmallConfetti} />
       </div>
       <div className={styles.containerContent}>
         <img src={Monster} className={styles.imgMonster} />
@@ -33,18 +30,19 @@ const HonorMessage = () => {
             <h1 className={styles.MessageTitle}>{honorTitle}</h1>
             <p className={styles.messageText}>{honorText}</p>
           </div>
+          <div className={styles.containerButtonRout}>
+            <button
+              onClick={() => {
+                navigate("/");
+              }}
+              className={styles.buttonRout}
+            >
+              Вернуться на главную
+            </button>
+          </div>
         </div>
       </div>
-      <div className={styles.containerButtonRout}>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-          className={styles.buttonRout}
-        >
-          Вернуться на главную
-        </button>
-      </div>
+      <img src={bigConfetti} className={styles.elementBigConfetti} />
     </div>
   );
 };

@@ -1,67 +1,160 @@
 @import "../styles/vars.scss";
 @import "../styles/media_mixin.scss";
 
-.designElements {
+@include _920 {}
+
+@include _720 {}
+
+@include _480 {}
+
+.containerUfoDesign {
+    padding-left: 100px;
     display: flex;
-    justify-content: space-between;
-    z-index: 2;
+    flex-direction: column;
 
-    .containerUfoDesign {
-        display: flex;
-        flex-direction: column;
+    @include _920 {
+        padding-left: 70px;
+    }
 
-        .elementUfo {}
+    @include _720 {
+        padding-left: 24px;
+    }
 
-        .elementSmallConfetti {
-            position: relative;
-            bottom: 120px;
+    @include _480 {
+        padding-left: 35px;
+    }
+
+    .elementUfo {
+        max-width: 143px;
+
+        @include _920 {
+            max-width: 135px;
+        }
+
+        @include _720 {
+            max-width: 195px;
+        }
+
+        @include _480 {
+            max-width: 135px;
         }
     }
 
-    .elementBigConfetti {
+    .elementSmallConfetti {
         position: relative;
-        bottom: 120px;
+        bottom: 90px;
+
+        @include _920 {
+            max-width: 141px;
+            bottom: 70px;
+        }
+
+        @include _720 {
+            max-width: 221px;
+            bottom: 70px;
+        }
+
+        @include _480 {
+            max-width: 153px;
+            bottom: 50px;
+        }
     }
 }
 
-.containerContent {
+.elementBigConfetti {
     position: relative;
-    bottom: 350px;
+    z-index: 2;
+    padding-right: 50px;
+    max-width: 230px;
+    position: relative;
+    bottom: 160px;
+
+    @include _920 {
+        max-width: 100px;
+        padding-right: 0px;
+    }
+
+    @include _720 {
+        max-width: 117px;
+    }
+
+    @include _480 {}
+}
+
+
+.containerContent {
+
     width: 963px;
-    left: 300px;
     display: flex;
 
+    @include _920 {
+        width: 580px;
+    }
+
     .imgMonster {
-        width: 281px;
+        padding-top: 187px;
+        max-width: 281px;
+
+        @include _920 {
+            max-width: 200px;
+        }
+
+        @include _720 {}
+
+
     }
 
     .containerMessage {
-        position: relative;
-        bottom: 150px;
-        right: 30px;
+        padding-top: 60px;
         width: 100%;
         display: flex;
         flex-direction: column;
 
+        @include _920 {}
+
+        @include _720 {}
+
+
+
         img {
             width: 429px;
+
+
+
         }
 
         .containerMessageText {
+            padding: 60px 0 0 60px;
             position: absolute;
-            bottom: 200px;
-            left: 50px;
             max-width: 371px;
             text-align: center;
 
+            @include _920 {
+                right: 160px;
+                padding: 25px 0 0 30px;
+                max-width: 280px;
+            }
+
+            @include _720 {}
+
+
+
 
             .MessageTitle {
-
                 padding: 0 20px 15px 20px;
                 font-weight: 700;
                 font-size: 18px;
                 line-height: 29px;
                 color: $white;
+
+                @include _920 {
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+
+                @include _720 {}
+
+
             }
 
             .messageText {
@@ -71,6 +164,15 @@
                 font-size: 16px;
                 line-height: 20px;
                 color: $white;
+
+                @include _920 {
+                    font-size: 13px;
+                    line-height: 15px;
+                }
+
+                @include _720 {}
+
+
             }
         }
 
@@ -84,18 +186,16 @@
     justify-content: flex-end;
 
     .buttonRout {
-        position: relative;
-        bottom: 400px;
-        margin-right: 100px;
-        padding: 15px 14px;
-        border-radius: 16px;
+        margin-top: 180px;
+        padding: 11px 20px;
+        border-radius: 11.7984px;
         font-weight: 800;
-        font-size: 12px;
+        font-size: 12.5358px;
         line-height: 15px;
         text-align: center;
         letter-spacing: 0.04em;
         text-transform: uppercase;
-        color: $white;
+        color: #FFFFFF;
         background-color: $orange;
         transition: all .2s ease-in-out;
 
@@ -103,5 +203,12 @@
             background-color: rgb(255, 94, 0);
 
         }
+
+        @include _920 {}
+
+        @include _720 {}
+
     }
 }
+
+//adaptive-version-480
