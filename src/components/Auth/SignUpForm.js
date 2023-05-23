@@ -8,6 +8,8 @@ function SignUp({ onSubmit }) {
   const [data, setData] = useState({
     login: "",
     password: "",
+    name: "",
+    surname: "",
   });
 
   const handleFormSubmit = (event) => {
@@ -32,6 +34,22 @@ function SignUp({ onSubmit }) {
         <img src={star} className={styles.imgStar} />
         <img src={monsterHead} className={styles.imgMonsterHead} />
         <form onSubmit={handleFormSubmit} className={styles.formSign}>
+          <input
+            placeholder="Введите имя"
+            type="text"
+            className={styles.inputForm}
+            value={data.name}
+            onChange={(event) => changeValueInput(event, "name")}
+            required
+          ></input>
+          <input
+            placeholder="Введите фамилию"
+            type="text"
+            className={styles.inputForm}
+            value={data.surname}
+            onChange={(event) => changeValueInput(event, "surname")}
+            required
+          ></input>
           <input
             placeholder="Введите логин"
             type="text"
