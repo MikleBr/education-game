@@ -1,21 +1,23 @@
-import { useState } from "react";
-import TaskWrapper from "./TaskWrapper";
-import styles from "./TextTask.module.scss";
-import userInfo from "../../data/userInfo";
+import { useState } from 'react';
+import TaskWrapper from './TaskWrapper';
+import styles from './TextTask.module.scss';
+import { useAuth } from './../../hooks/useAuth';
 
 function SelectTasks({ text, error, answers, onSubmit }) {
-  const [userAnswer, setUserAnswer] = useState("");
+  const [userAnswer, setUserAnswer] = useState('');
 
-  const handleFormSubmit = (event) => {
+  const { userData } = useAuth();
+
+  const handleFormSubmit = event => {
     event.preventDefault();
     onSubmit(userAnswer);
   };
 
   return (
     <TaskWrapper
-      userName={userInfo.name}
+      userName={userData?.name}
       error={error}
-      userPoint={userInfo.rating}
+      userPoint={userData?.rating}
       textTask={text}
       onSubmit={handleFormSubmit}
     >
@@ -26,7 +28,7 @@ function SelectTasks({ text, error, answers, onSubmit }) {
             key={index}
             type="button"
             className={`${styles.selectTaskButton} ${
-              userAnswer === answer ? styles.selectTaskButton_selected : ""
+              userAnswer === answer ? styles.selectTaskButton_selected : ''
             }`}
             onClick={() => setUserAnswer(answer)}
           >

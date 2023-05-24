@@ -6,22 +6,15 @@ import MainFooterStartGame from '../components/Main/MainFooterStartGame';
 import { useEffect, useState } from 'react';
 
 import { useAuth } from '../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../firebase/init';
+import { db } from '../firebase/init';
 import { collection, getDocs } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 const Main = () => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [tests, setTests] = useState([]);
 
-  const navigate = useNavigate();
   const { userData } = useAuth();
-
-  const signOut = () => {
-    auth.signOut();
-    navigate('/auth/signin', {
-      replace: true,
-    });
-  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -48,9 +41,21 @@ const Main = () => {
     getData();
   }, [userData?.completedTests]);
 
+  const onStart = () => {
+    const uncompletedTests = tests.filter(
+      test => !userData.completedTests.includes(test.id)
+    );
+
+    console.log(uncompletedTests);
+
+    if (uncompletedTests.length === 0) return;
+
+    navigate(`/tests/${uncompletedTests[0].id}`);
+  };
+
   return (
     <>
-      <MainHeaderStartGame />
+      <MainHeaderStartGame onStart={onStart} />
 
       <MainInfoPersonal
         userCountPoint={userData?.rating}
@@ -61,7 +66,7 @@ const Main = () => {
         {!isLoading && tests.length !== 0 && <HonorsMainPage tests={tests} />}
       </MainInfoPersonal>
 
-      <MainFooterStartGame />
+      <MainFooterStartGame onStart={onStart} />
     </>
   );
 };

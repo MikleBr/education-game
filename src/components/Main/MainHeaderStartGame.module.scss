@@ -7,6 +7,24 @@
     background-color: $accent;
     border: none;
 
+    .signoutButton {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        height: unset;
+        color: $white;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            color: $orange;
+        }
+
+        @include _920 {
+            font-size: 16px;
+
+        }
+    }
+
     .containerContentLink {
         display: flex;
         width: 100%;
@@ -35,24 +53,6 @@
                 width: 46px;
                 height: 46px;
                 background-color: $lightgreen;
-            }
-        }
-
-
-        a {
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 22px;
-            color: $white;
-            transition: all .2s ease-in-out;
-
-            &:hover {
-                color: $orange;
-            }
-
-            @include _920 {
-                font-size: 16px;
-
             }
         }
     }

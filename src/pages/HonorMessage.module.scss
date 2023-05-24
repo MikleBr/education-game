@@ -21,7 +21,7 @@
     }
 
     @include _480 {
-        padding-left: 35px;
+        padding-left: 20px;
     }
 
     .elementUfo {
@@ -32,11 +32,11 @@
         }
 
         @include _720 {
-            max-width: 195px;
+            max-width: 150px;
         }
 
         @include _480 {
-            max-width: 135px;
+            max-width: 100px;
         }
     }
 
@@ -47,15 +47,18 @@
         @include _920 {
             max-width: 141px;
             bottom: 70px;
+
         }
 
         @include _720 {
-            max-width: 221px;
+            max-width: 150px;
             bottom: 70px;
+            left: 10px;
         }
 
         @include _480 {
-            max-width: 153px;
+            max-width: 110px;
+
             bottom: 50px;
         }
     }
@@ -75,10 +78,14 @@
     }
 
     @include _720 {
-        max-width: 117px;
+        max-width: 90px;
     }
 
-    @include _480 {}
+    @include _480 {
+        max-width: 80px;
+        bottom: 300px;
+
+    }
 }
 
 
@@ -86,10 +93,6 @@
 
     width: 963px;
     display: flex;
-
-    @include _920 {
-        width: 580px;
-    }
 
     .imgMonster {
         padding-top: 187px;
@@ -99,7 +102,10 @@
             max-width: 200px;
         }
 
-        @include _720 {}
+        @include _720 {
+            padding-top: 250px;
+            max-width: 170px;
+        }
 
 
     }
@@ -110,22 +116,26 @@
         display: flex;
         flex-direction: column;
 
-        @include _920 {}
+        @include _720 {
+            position: relative;
+            right: 50px;
+            padding-top: 90px;
 
-        @include _720 {}
-
-
+        }
 
         img {
             width: 429px;
 
-
+            @include _720 {
+                width: 580px;
+            }
 
         }
 
         .containerMessageText {
             padding: 60px 0 0 60px;
             position: absolute;
+
             max-width: 371px;
             text-align: center;
 
@@ -135,7 +145,11 @@
                 max-width: 280px;
             }
 
-            @include _720 {}
+            @include _720 {
+                right: 0;
+                max-width: 260px;
+                padding: 25px 5px 0 20px;
+            }
 
 
 
@@ -152,7 +166,11 @@
                     line-height: 20px;
                 }
 
-                @include _720 {}
+                @include _720 {
+                    padding: 0 30px 10px 20px;
+                    font-size: 12px;
+                    line-height: 13px;
+                }
 
 
             }
@@ -170,7 +188,10 @@
                     line-height: 15px;
                 }
 
-                @include _720 {}
+                @include _720 {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
 
 
             }
@@ -204,7 +225,6 @@
 
         }
 
-        @include _920 {}
 
         @include _720 {}
 
@@ -212,3 +232,91 @@
 }
 
 //adaptive-version-480
+
+.containerContentAdaptive {
+    .containerMessageAdaptive {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+
+        .containerMessageTextAdaptive {
+            position: absolute;
+            text-align: center;
+            max-width: 260px;
+            padding: 40px 5px 0 20px;
+
+            .MessageTitleAdaptive {
+                padding: 0 20px 15px 20px;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                color: $white;
+
+                @include _920 {
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+
+                @include _720 {
+                    padding: 0 30px 10px 20px;
+                    font-size: 12px;
+                    line-height: 13px;
+                }
+
+
+            }
+
+            .messageTextAdaptive {
+
+                max-width: 377px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                color: $white;
+
+                @include _920 {
+                    font-size: 13px;
+                    line-height: 15px;
+                }
+
+                @include _720 {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+
+
+            }
+        }
+
+
+
+    }
+}
+
+.containerButtonRoutAdaptive {
+    display: flex;
+    justify-content: center;
+
+    .buttonRoutAdaptive {
+        padding: 9px 30px;
+        border-radius: 11px;
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background-color: $orange;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background-color: rgb(255, 94, 0);
+
+        }
+
+    }
+}

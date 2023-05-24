@@ -3,7 +3,7 @@ import Monster from '../../assets/image/Monster.svg';
 
 import { auth } from '../../firebase/init';
 import { useNavigate } from 'react-router-dom';
-const MainStartGame = () => {
+const MainStartGame = ({ onStart }) => {
   const navigate = useNavigate();
   const signOut = () => {
     auth.signOut();
@@ -20,7 +20,9 @@ const MainStartGame = () => {
             <div className={styles.designCircleBig}></div>
             <div className={styles.designCircleSmall}></div>
           </div>
-          <button onClick={signOut}>Выйти из игры</button>
+          <button className={styles.signoutButton} onClick={signOut}>
+            Выйти из игры
+          </button>
         </div>
 
         {window.innerWidth >= 920 ? (
@@ -36,7 +38,12 @@ const MainStartGame = () => {
                 благодарности, я буду тебе предсказывать будущее и раскрывать
                 тайны своей планеты!
               </p>
-              <button className={styles.descriptionGameButton}>Помочь</button>
+              <button
+                onClick={onStart}
+                className={styles.descriptionGameButton}
+              >
+                Помочь
+              </button>
             </div>
           </div>
         ) : (
@@ -49,7 +56,10 @@ const MainStartGame = () => {
               повышая свой уровень. Также в знак благодарности, я буду тебе
               предсказывать будущее и раскрывать тайны своей планеты!
             </p>
-            <button className={styles.descriptionGameButtonAdaptive}>
+            <button
+              onClick={onStart}
+              className={styles.descriptionGameButtonAdaptive}
+            >
               Помочь
             </button>
 

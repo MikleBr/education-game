@@ -1,7 +1,7 @@
-import styles from "./MainFooterStartGame.module.scss";
-import Monster from "../../assets/image/Monster.svg";
+import styles from './MainFooterStartGame.module.scss';
+import Monster from '../../assets/image/Monster.svg';
 
-const MainFooterStartGame = () => {
+const MainFooterStartGame = ({ onStart }) => {
   return (
     <>
       <svg
@@ -24,7 +24,10 @@ const MainFooterStartGame = () => {
                 В пути тебе встретится множество разных заданий, которые помогут
                 мне понять твою планету. Ты готов?
               </p>
-              <button className={styles.descriptionGameButton}>
+              <button
+                onClick={onStart}
+                className={styles.descriptionGameButton}
+              >
                 к заданиям
               </button>
             </div>
@@ -36,7 +39,10 @@ const MainFooterStartGame = () => {
                 В пути тебе встретится множество разных заданий, которые помогут
                 мне понять твою планету. Ты готов?
               </p>
-              <button className={styles.descriptionGameButtonAdaptive}>
+              <button
+                onClick={onStart}
+                className={styles.descriptionGameButtonAdaptive}
+              >
                 к заданиям
               </button>
             </div>
