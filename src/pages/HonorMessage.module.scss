@@ -1,27 +1,17 @@
 @import "../styles/vars.scss";
 @import "../styles/media_mixin.scss";
 
-@include _920 {}
-
-@include _720 {}
-
-@include _480 {}
-
 .containerUfoDesign {
-    padding-left: 100px;
+    position: absolute;
+    left: 50px;
+    top: 0;
     display: flex;
     flex-direction: column;
+    z-index: -1;
 
-    @include _920 {
-        padding-left: 70px;
-    }
-
-    @include _720 {
-        padding-left: 24px;
-    }
 
     @include _480 {
-        padding-left: 20px;
+        left: 20px;
     }
 
     .elementUfo {
@@ -65,19 +55,14 @@
 }
 
 .elementBigConfetti {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 50px;
     z-index: 2;
-    padding-right: 50px;
     max-width: 230px;
-    position: relative;
-    bottom: 160px;
 
     @include _920 {
-        max-width: 100px;
-        padding-right: 0px;
-    }
-
-    @include _720 {
+        right: 0px;
         max-width: 90px;
     }
 
@@ -90,72 +75,65 @@
 
 
 .containerContent {
-
-    width: 963px;
+    width: 100%;
+    margin: 150px auto 0 auto;
+    max-width: 800px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 60px;
+
+
+
+
+    @include _720 {
+        padding: 0 16px;
+        column-gap: 16px;
+    }
+
+    @include _480 {
+        flex-direction: column-reverse;
+        column-gap: 0;
+        align-items: center;
+        justify-content: unset;
+    }
+
 
     .imgMonster {
-        padding-top: 187px;
-        max-width: 281px;
+        max-width: 280px;
 
         @include _920 {
             max-width: 200px;
         }
 
         @include _720 {
-            padding-top: 250px;
-            max-width: 170px;
+            max-width: 150px;
         }
-
-
     }
 
     .containerMessage {
-        padding-top: 60px;
         width: 100%;
+        flex-grow: 1;
+        max-width: 420px;
         display: flex;
+        align-items: center;
         flex-direction: column;
 
-        @include _720 {
-            position: relative;
-            right: 50px;
-            padding-top: 90px;
-
-        }
-
-        img {
-            width: 429px;
-
-            @include _720 {
-                width: 580px;
-            }
-
-        }
-
         .containerMessageText {
-            padding: 60px 0 0 60px;
-            position: absolute;
+            background: #009285;
+            padding: 24px 16px;
+            border-radius: 24px;
 
-            max-width: 371px;
             text-align: center;
 
-            @include _920 {
-                right: 160px;
-                padding: 25px 0 0 30px;
-                max-width: 280px;
-            }
-
             @include _720 {
-                right: 0;
-                max-width: 260px;
-                padding: 25px 5px 0 20px;
+                padding: 16px 8px;
+                border-radius: 16px;
             }
-
-
 
 
             .MessageTitle {
-                padding: 0 20px 15px 20px;
+                margin-bottom: 15px;
                 font-weight: 700;
                 font-size: 18px;
                 line-height: 29px;
@@ -171,13 +149,9 @@
                     font-size: 12px;
                     line-height: 13px;
                 }
-
-
             }
 
             .messageText {
-
-                max-width: 377px;
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 20px;
@@ -192,131 +166,31 @@
                     font-size: 12px;
                     line-height: 12px;
                 }
-
-
             }
         }
 
-
-
-    }
-}
-
-.containerButtonRout {
-    display: flex;
-    justify-content: flex-end;
-
-    .buttonRout {
-        margin-top: 180px;
-        padding: 11px 20px;
-        border-radius: 11.7984px;
-        font-weight: 800;
-        font-size: 12.5358px;
-        line-height: 15px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background-color: $orange;
-        transition: all .2s ease-in-out;
-
-        &:hover {
-            background-color: rgb(255, 94, 0);
-
-        }
-
-
-        @include _720 {}
-
-    }
-}
-
-//adaptive-version-480
-
-.containerContentAdaptive {
-    .containerMessageAdaptive {
-
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-
-
-        .containerMessageTextAdaptive {
-            position: absolute;
+        .buttonRoute {
+            width: 100%;
+            margin-top: 24px;
+            padding: 11px 20px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 12px;
+            line-height: 15px;
             text-align: center;
-            max-width: 260px;
-            padding: 40px 5px 0 20px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background-color: $orange;
+            transition: all .2s ease-in-out;
 
-            .MessageTitleAdaptive {
-                padding: 0 20px 15px 20px;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 24px;
-                color: $white;
-
-                @include _920 {
-                    font-size: 15px;
-                    line-height: 20px;
-                }
-
-                @include _720 {
-                    padding: 0 30px 10px 20px;
-                    font-size: 12px;
-                    line-height: 13px;
-                }
-
-
+            &:hover {
+                background-color: rgb(255, 94, 0);
             }
 
-            .messageTextAdaptive {
-
-                max-width: 377px;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 20px;
-                color: $white;
-
-                @include _920 {
-                    font-size: 13px;
-                    line-height: 15px;
-                }
-
-                @include _720 {
-                    font-size: 12px;
-                    line-height: 12px;
-                }
-
-
+            @include _480 {
+                text-transform: lowercase;
             }
         }
-
-
-
-    }
-}
-
-.containerButtonRoutAdaptive {
-    display: flex;
-    justify-content: center;
-
-    .buttonRoutAdaptive {
-        padding: 9px 30px;
-        border-radius: 11px;
-        font-weight: 800;
-        font-size: 10px;
-        line-height: 18px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background-color: $orange;
-        transition: all .2s ease-in-out;
-
-        &:hover {
-            background-color: rgb(255, 94, 0);
-
-        }
-
     }
 }

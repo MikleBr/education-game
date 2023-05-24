@@ -3,12 +3,10 @@ import Monster from '../assets/image/Monster.svg';
 import Ufo from '../assets/image/ufo.svg';
 import smallConfetti from '../assets/image/smallConfetti.svg';
 import bigConfetti from '../assets/image/bigConfetti.svg';
-import greenMessage from '../assets/image/greenMessage.svg';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase/init';
-import greenMessageAdaptive from '../assets/image/green-message-vertical.png';
 
 const HonorMessage = () => {
   const { id: testId } = useParams();
@@ -51,66 +49,31 @@ const HonorMessage = () => {
         <img src={Ufo} className={styles.elementUfo} />
         <img src={smallConfetti} className={styles.elementSmallConfetti} />
       </div>
-      {window.innerWidth >= 480 ? (
-        <div className={styles.containerContent}>
-          <img src={Monster} className={styles.imgMonster} />
-          <div className={styles.containerMessage}>
-            <img src={greenMessage} />
-            <div className={styles.containerMessageText}>
-              {isLoading && <p>Загрузка подсказки</p>}
-              {!isLoading && currentTest?.honor && (
-                <>
-                  <h1 className={styles.MessageTitle}>
-                    {currentTest.honor.title}
-                  </h1>
-                  <p className={styles.messageText}>{currentTest.honor.text}</p>
-                </>
-              )}
-            </div>
-            <div className={styles.containerButtonRout}>
-              <button
-                onClick={() => {
-                  navigate('/');
-                }}
-                className={styles.buttonRout}
-              >
-                Вернуться на главную
-              </button>
-            </div>
+      <div className={styles.containerContent}>
+        <img src={Monster} className={styles.imgMonster} />
+        <div className={styles.containerMessage}>
+          <div className={styles.containerMessageText}>
+            {isLoading && <p>Загрузка подсказки</p>}
+            {!isLoading && currentTest?.honor && (
+              <>
+                <h1 className={styles.MessageTitle}>
+                  {currentTest.honor.title}
+                </h1>
+                <p className={styles.messageText}>{currentTest.honor.text}</p>
+              </>
+            )}
           </div>
+          <button
+            onClick={() => {
+              navigate('/');
+            }}
+            className={styles.buttonRoute}
+          >
+            Вернуться на главную
+          </button>
         </div>
-      ) : (
-        <div
-          style={{ paddingTop: '100px' }}
-          className={styles.containerContentAdaptive}
-        >
-          <div className={styles.containerMessageAdaptive}>
-            <img src={greenMessageAdaptive} />
-            <div className={styles.containerMessageTextAdaptive}>
-              {isLoading && <p>Загрузка подсказки</p>}
-              {!isLoading && currentTest?.honor && (
-                <>
-                  <h1 className={styles.MessageTitle}>
-                    {currentTest.honor.title}
-                  </h1>
-                  <p className={styles.messageText}>{currentTest.honor.text}</p>
-                </>
-              )}
-            </div>
-            <img src={Monster} className={styles.imgMonsterAdaptive} />
-            <div className={styles.containerButtonRoutAdaptive}>
-              <button
-                onClick={() => {
-                  navigate('/');
-                }}
-                className={styles.buttonRoutAdaptive}
-              >
-                Вернуться на главную
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
+
       <img src={bigConfetti} className={styles.elementBigConfetti} />
     </div>
   );

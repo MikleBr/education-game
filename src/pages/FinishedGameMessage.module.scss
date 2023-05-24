@@ -5,42 +5,14 @@
     flex-direction: column;
 }
 
-.containerButtonRout {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 42px;
-
-    img {
-        position: relative;
-        bottom: 130px;
-    }
-
-    .buttonRout {
-        max-height: 53px;
-        margin-right: 68px;
-        padding: 15px 14px;
-        border-radius: 16px;
-        font-weight: 800;
-        font-size: 17px;
-        line-height: 21px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: $white;
-        background-color: $orange;
-        transition: all .2s ease-in-out;
-
-        &:hover {
-            background-color: rgb(255, 94, 0);
-
-        }
-    }
+.elementBigConfetti {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .containerContent {
-    position: relative;
-    bottom: 230px;
-    right: 50px;
+    margin: 0 auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -61,8 +33,6 @@
             left: 170px;
             max-width: 380px;
             text-align: center;
-
-
 
             .messageTitle {
                 padding-bottom: 10px;

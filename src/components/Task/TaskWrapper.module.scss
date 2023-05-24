@@ -98,7 +98,7 @@
     }
 
     @include _480 {
-        width: 246px;
+        width: calc(100% - 32px);
     }
 
     img {
@@ -116,7 +116,7 @@
     .containerTextTask {
         width: 100%;
         background-color: $accent;
-        border-radius: 50px;
+        border-radius: 32px;
         padding: 36px;
         text-align: center;
 
@@ -130,19 +130,12 @@
         }
 
         .textTask {
-            font-size: 21.7021px;
-            line-height: 26px;
+            font-size: 22px;
             color: $white;
             word-wrap: break-word;
 
-            @include _720 {
-                font-size: 23.2754px;
-                line-height: 28px;
-            }
-
             @include _480 {
-                font-size: 19.5347px;
-                line-height: 24px;
+                font-size: 16px;
             }
         }
     }

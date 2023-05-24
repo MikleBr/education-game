@@ -64,10 +64,6 @@ const MainStartGame = ({ onStart }) => {
             </button>
 
             <div className={styles.containerDesignCircleAdaptive}>
-              <div style={{ display: 'flex' }}>
-                <div className={styles.designCircleBigAdaptive}></div>
-                <div className={styles.designCircleSmallAdaptive}></div>
-              </div>
               <img
                 src={Monster}
                 alt="monster"
