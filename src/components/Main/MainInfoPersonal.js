@@ -1,22 +1,22 @@
-import styles from "./MainInfoPersonal.module.scss";
-import UfoBottom from "../../assets/image/ufo.svg";
-import UfoTop from "../../assets/image/ufo.svg";
-import MonsterHead from "../../assets/image/monsterHead.svg";
-import StarPoint from "../../assets/image/starPoint.svg";
-import StarOrange from "../../assets/image/starOrange.svg";
-import StarOrangeRight from "../../assets/image/StarOrangeRight.svg";
-import { tests } from "../../data/tests";
+import styles from './MainInfoPersonal.module.scss';
+import UfoBottom from '../../assets/image/ufo.svg';
+import UfoTop from '../../assets/image/ufo.svg';
+import MonsterHead from '../../assets/image/monsterHead.svg';
+import StarPoint from '../../assets/image/starPoint.svg';
+import StarOrange from '../../assets/image/starOrange.svg';
+import StarOrangeRight from '../../assets/image/StarOrangeRight.svg';
+import { tests } from '../../data/tests';
 
 const userLevels = {
-  1: "Новичок Планеты",
-  2: " Знаток Планеты",
-  3: "Путешественник Мира",
-  4: "Мудрец Планеты",
+  1: 'Новичок Планеты',
+  2: ' Знаток Планеты',
+  3: 'Путешественник Мира',
+  4: 'Мудрец Планеты',
 };
 
 const MainInfoPersonal = ({ userCountPoint, username, children }) => {
   const userLevel =
-    userLevels[tests.filter((test) => test.completed).length || 1];
+    userLevels[tests.filter(test => test.completed).length || 1];
 
   return (
     <div className={styles.MainInfoPersonal}>

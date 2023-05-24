@@ -1,7 +1,17 @@
-import styles from "./MainHeaderStartGame.module.scss";
-import Monster from "../../assets/image/Monster.svg";
-import { Link } from "react-router-dom";
+import styles from './MainHeaderStartGame.module.scss';
+import Monster from '../../assets/image/Monster.svg';
+
+import { auth } from '../../firebase/init';
+import { useNavigate } from 'react-router-dom';
 const MainStartGame = () => {
+  const navigate = useNavigate();
+  const signOut = () => {
+    auth.signOut();
+    navigate('/auth/signin', {
+      replace: true,
+    });
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -10,7 +20,7 @@ const MainStartGame = () => {
             <div className={styles.designCircleBig}></div>
             <div className={styles.designCircleSmall}></div>
           </div>
-          <Link to="/auth/signin">Выйти из игры</Link>
+          <button onClick={signOut}>Выйти из игры</button>
         </div>
 
         {window.innerWidth >= 920 ? (
@@ -44,7 +54,7 @@ const MainStartGame = () => {
             </button>
 
             <div className={styles.containerDesignCircleAdaptive}>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: 'flex' }}>
                 <div className={styles.designCircleBigAdaptive}></div>
                 <div className={styles.designCircleSmallAdaptive}></div>
               </div>

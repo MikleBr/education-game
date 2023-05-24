@@ -7,12 +7,17 @@ import SignUp from '../pages/SignUp';
 import HonorMessage from '../pages/HonorMessage';
 import FinishedGameMessage from '../pages/FinishedGameMessage';
 import Test from '../pages/Test';
+import { PrivateRoute } from './PrivateRoute';
 
 const Routing = () => {
   const routesList = [
     {
       path: '',
-      element: <PublicLayout />,
+      element: (
+        <PrivateRoute>
+          <PublicLayout />
+        </PrivateRoute>
+      ),
       children: [
         {
           path: '/',

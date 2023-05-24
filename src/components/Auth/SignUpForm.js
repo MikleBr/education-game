@@ -1,21 +1,20 @@
-import { Link, useNavigate } from "react-router-dom";
-import monsterHead from "../../assets/image/monsterHead.svg";
-import star from "../../assets/image/star.svg";
-import styles from "./SignUpForm.module.scss";
-import { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import monsterHead from '../../assets/image/monsterHead.svg';
+import star from '../../assets/image/star.svg';
+import styles from './SignUpForm.module.scss';
+import { useState } from 'react';
 function SignUp({ onSubmit }) {
   const navigate = useNavigate();
   const [data, setData] = useState({
-    login: "",
-    password: "",
-    name: "",
-    surname: "",
+    login: '',
+    password: '',
+    name: '',
+    surname: '',
   });
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = event => {
     event.preventDefault();
     onSubmit(data);
-    navigate("/");
   };
 
   const changeValueInput = (event, name) => {
@@ -39,7 +38,7 @@ function SignUp({ onSubmit }) {
             type="text"
             className={styles.inputForm}
             value={data.name}
-            onChange={(event) => changeValueInput(event, "name")}
+            onChange={event => changeValueInput(event, 'name')}
             required
           ></input>
           <input
@@ -47,7 +46,7 @@ function SignUp({ onSubmit }) {
             type="text"
             className={styles.inputForm}
             value={data.surname}
-            onChange={(event) => changeValueInput(event, "surname")}
+            onChange={event => changeValueInput(event, 'surname')}
             required
           ></input>
           <input
@@ -55,7 +54,7 @@ function SignUp({ onSubmit }) {
             type="text"
             className={styles.inputForm}
             value={data.login}
-            onChange={(event) => changeValueInput(event, "login")}
+            onChange={event => changeValueInput(event, 'login')}
             required
           ></input>
           <input
@@ -63,7 +62,7 @@ function SignUp({ onSubmit }) {
             placeholder="Введите пароль"
             className={styles.inputForm}
             value={data.password}
-            onChange={(event) => changeValueInput(event, "password")}
+            onChange={event => changeValueInput(event, 'password')}
             required
           ></input>
           <button type="submit" className={styles.submitForm}>

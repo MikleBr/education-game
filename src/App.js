@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Routing from './routes/routes';
 import userInfo from './data/userInfo';
 import { tests } from './data/tests';
+import { AuthProvider } from './context/auth';
 
 function App() {
   useEffect(() => {
@@ -19,9 +20,11 @@ function App() {
 
   return (
     <div className="main-container">
-      <BrowserRouter>
-        <Routing />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routing />
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
