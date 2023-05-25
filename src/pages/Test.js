@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import TextTask from '../components/Task/TextTask';
 import SelectTasks from '../components/Task/SelectTask';
@@ -79,6 +79,10 @@ const Test = () => {
 
   if (!currentTask) {
     return null;
+  }
+
+  if (userData?.completedTests?.includes(currentTest.id)) {
+    return <Navigate to={`/tests/${testId}/honor`} />;
   }
 
   return (
