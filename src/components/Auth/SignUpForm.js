@@ -1,10 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import monsterHead from '../../assets/image/monsterHead.svg';
 import star from '../../assets/image/star.svg';
 import styles from './SignUpForm.module.scss';
 import { useState } from 'react';
-function SignUp({ onSubmit }) {
-  const navigate = useNavigate();
+function SignUp({ error, onSubmit, isLoading }) {
   const [data, setData] = useState({
     login: '',
     password: '',
@@ -65,8 +64,9 @@ function SignUp({ onSubmit }) {
             onChange={event => changeValueInput(event, 'password')}
             required
           ></input>
+          {error && <div className={styles.errorText}>{error}</div>}
           <button type="submit" className={styles.submitForm}>
-            Регистрация
+            {!isLoading ? 'Регистрация' : 'Загрузка...'}
           </button>
         </form>
       </div>
